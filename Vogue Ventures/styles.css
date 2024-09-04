@@ -1,0 +1,688 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Import Custom Font */
+@font-face {
+    font-family: 'Jost';
+    src: url('fonts/Jost-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900; /* Adjust the range as per the font weights available */
+}
+
+
+@font-face {
+    font-family: 'Aaargh';
+    src: url('fonts/Aaargh.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'intro-text';
+    src: url('fonts/Intro Light Alt.otf') format('truetype');
+    font-weight: 400;
+}
+
+.custom-font {
+    font-family: 'Jost', sans-serif; /* Fallback to sans-serif if Jost isn't available */
+   }
+.intro-text {
+    font-family: 'intro-text', sans-serif; /* Fallback to sans-serif if Jost isn't available */
+   }
+
+.custom-font2 {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Jost';
+}
+
+/* Apply Custom Font */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* Background Image */
+.background-slider {
+    position: relative;
+    overflow: hidden; /* Hide overflow to prevent images from showing outside the container */
+    height: 410px; /* Adjust height as needed */
+}
+
+.background-slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.background-slider .slide:nth-child(1) {
+    background-image: url('img/picture01.jpg'); 
+}
+
+
+
+/* Text Overlay Styles */
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.text-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for contrast */
+    z-index: -1;
+}
+
+.text-overlay h1 {
+    font-family: 'Jost', sans-serif;
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 1.2; /* Adjust line-height for spacing */
+    margin: 0; /* Remove default margin */
+}
+
+.text-overlay p {
+    font-family: 'Aaargh', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4; /* Adjust line-height for spacing */
+    margin: 10px 0 0; /* Adjust margins */
+}
+
+/* Main Content Styles */
+main {
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Split container for dividing the page */
+.split-container {
+    display: flex;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Left and Right side styles */
+.left-side, .right-side {
+    flex: 1; /* Equally split the width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+     margin-left: 20px;
+
+}
+
+/* Right Side styling for full width */
+.right-side {
+    flex: 1; /* Allows the right side to take up its share of the width */
+    display: flex;
+    justify-content: top; /* Centers the content horizontally */
+    align-items: top; /* Aligns the content to the top */
+    background-color: #fff;
+    padding: 0; /* Added padding for some breathing room */
+    box-sizing: border-box;
+   
+}
+
+.content-wrapper {
+    max-width: 700px; /* Maximum width for the content to prevent it from stretching too wide */
+    width: 100%; /* Ensures content takes full width of the container */
+}
+
+.right-side h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.right-side h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.right-side .intro-text {
+    font-size: 20px;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+.right-side .benefits-list,
+.right-side .bestsellers-list {
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+.right-side .benefits-list li,
+.right-side .bestsellers-list li {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.shop-now-container {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.btn-shop-now {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #00B4D8;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-shop-now:hover {
+    background-color: #0077A8;
+}
+
+/* Overlay for text over images */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Custom font styles */
+.custom-font {
+    font-family: Jost, sans-serif;
+}
+
+/* Link styles inside the overlay */
+.overlay a {
+    color: #00B4D8; /* Hover effect color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Shoe categories grid section */
+
+
+.shoe-categories-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr; /* Custom widths for columns */
+    grid-template-rows: 300px 350px; /* Custom heights for rows */
+    gap: 0;
+    padding: 5px;
+}
+
+/* Category styling */
+.category {
+    position: relative;
+    overflow: hidden;
+}
+
+.category img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.category .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.category h2 {
+    margin-bottom: 10px;
+    margin-right: 50px;
+    font-size: 24px;
+}
+
+.category p {
+    margin-bottom: 20px;
+    text-align: center;
+    margin-right: 30px;
+    padding: 0 10px;
+}
+
+.category a {
+    background-color: #ff5733;
+    color: #fff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 10px;
+     margin-right: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.category a:hover {
+    background-color: #333;
+}
+
+.category:hover img {
+    transform: scale(1.1);
+}
+
+.category:hover .overlay {
+    opacity: 1;
+}
+
+/* Align container to the left half of the page */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main-wrapper {
+    display: flex;
+}
+
+.shoe-categories-container {
+    width: 50%;
+    padding: 0;
+    margin: 0;
+}
+
+.category h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.category p {
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.category a {
+    background-color: #ff5733;
+    color: #fff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.category a:hover {
+    background-color: #333;
+}
+
+.category:hover img {
+    transform: scale(1.1);
+}
+
+.category:hover .overlay {
+    opacity: 1;
+}
+
+/* Specific sizing for each grid item */
+#run {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#fashion {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#adventure {
+    grid-column: 1; 
+    grid-row: 2;
+}
+#comfort {
+    grid-column: 2; 
+    grid-row: 2;
+}
+
+/*top selling*/
+.product-categories, .top-selling {
+    padding: 20px;
+    text-align: center;
+}
+.card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.image-back {
+    opacity: 0;
+}
+
+.card:hover .image-back {
+    opacity: 1;
+}
+
+.card:hover .image-front {
+    opacity: 0;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+font-family: 'Jost';
+    font-size: 16px;
+    margin: 0 0 10px;
+    color: rgb(25, 18, 96);
+}
+
+.btn {
+    display: inline-block;
+    background-color: #00b4d8;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0088cc;
+    color: aqua;
+}
+
+/*exclusive brands*/
+.exclusive-brands {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+}
+
+.brands img {
+    width: 80px;
+    margin: 10px;
+}
+
+/* Icon Section Styles */
+.icon-row {
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-container {
+    display: flex;
+    gap: 15px; /* Space between icons */
+}
+
+/* Container for icons */
+.icon-section {
+  display: flex; /* Arrange icons horizontally */
+  justify-content: space-around; /* Space icons evenly */
+  align-items: center; /* Align icons vertically in the center */
+  gap: 20px; /* Gap between icons */
+}
+
+/* Style for each icon */
+.icon {
+  width: 120px; /* Set initial width */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation for size and fade */
+}
+
+/* Hover effect for the icon */
+.icon:hover {
+  transform: scale(1.2); /* Scale up the hovered icon */
+  opacity: 1; /* Keep the hovered icon fully visible */
+}
+
+/* Ef<fect for other icons when one is hovered */
+.icon-section:hover .icon {
+  transform: scale(0.9); /* Slightly shrink other icons */
+  opacity: 0.7; /* Slightly fade other icons */
+}
+
+/* Resetting hover effect on the target icon */
+.icon-section:hover .icon:hover {
+  transform: scale(1.2); /* Reset scaling for hovered icon */
+  opacity: 1; /* Reset opacity for hovered icon */
+}
+
+.card-carousel {
+    display: flex;
+    perspective: 1000px;
+}
+/* Center the card carousel */
+.card-carousel {
+    display: flex;
+    justify-content: center; /* Center aligns the cards horizontally */
+    align-items: center;
+    overflow: hidden;
+    gap: 0; /* Optional: Adjusts space between cards */
+    padding: 20px 0; /* Optional: Adds some space above and below the carousel */
+    perspective: 1000px; /* Enables 3D effect */
+    width: fit-content; /* Adjusts the width based on content */
+    margin: 0 auto; /* Centers the carousel container itself */
+}
+
+/* Card styles */
+.card1 {
+    width: 200px;
+    height: 300px;
+    margin: 20px 20px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    transform: rotateY(0deg);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    border-radius: 15px; /* Rounds the corners of the card */
+    overflow: visible; /* Allows the image to expand beyond the card's border */
+}
+
+/* Image styles */
+.card1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    border-radius: 0; /* Matches the border radius of the card */
+    transition: transform 0.5s ease; /* Smooth transition for scaling */
+}
+
+/* Hover effect on image */
+.card1:hover img {
+    transform: scale(1.1); /* Scales the image when hovered */
+}
+
+/* Carousel hover effects */
+.card-carousel:hover .card1 {
+    transform: rotateY(-20deg);
+}
+
+.card-carousel:hover .card1:hover {
+    transform: scale(1.1) rotateY(0deg);
+}
+
+/* Gradient effect at the bottom */
+.card-carousel:before {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    z-index: -1;
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+    filter: blur(10px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card1 {
+        width: 150px;
+        height: 220px;
+        margin: 0 5px;
+    }
+}
+/******** contact us css ********/
+
+
+.contactus-section {
+    padding: 50px 20px;
+    background-color: #fff;
+  }
+  
+  .contactus-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .contactus-header {
+    font: 400 36px 'Oswald', sans-serif;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: #333;
+  }
+  
+  .contactus-form-container {
+    margin-bottom: 50px;
+  }
+  
+  .contactus-form-control {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .contactus-send-button {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contactus-send-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .contactus-info-container {
+    margin-top: 50px;
+  }
+  
+  .contactus-details {
+    font-size: 16px;
+    color: #666;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .contactus-address,
+  .contactus-phone,
+  .contactus-email {
+    margin-bottom: 10px;
+  }
+  
+  .contactus-address i,
+  .contactus-phone i,
+  .contactus-email i {
+    color: #007bff;
+    margin-right: 10px;
+  }
+  
+  .contactus-map {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .contactus-map-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .contactus-form-control {
+      width: 100%;
+    }
+  }
+
+
+
+

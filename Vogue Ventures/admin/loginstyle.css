@@ -1,0 +1,459 @@
+* /*initial styles setup,No need to do again and again inside the code*/ 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 4rem;
+    scroll-behavior: smooth;
+    list-style: none;   /*Prevent adding bullet points in entire html code when use a list tag*/
+    text-decoration: none;  /*prevent highlighting spelling and word errors by underline*/
+}
+/* Using root functions we can intialize common styles that use repeatedly in css.Such as colors,fonts */
+:root
+{
+    --main-color:#fefae0;
+    --secondary-color:#d4a373;
+    --bg-color:#fff;
+    --text-color:#252422;
+}
+img
+{
+    width: 100%;
+}
+
+header
+{
+    position:fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    transition: 0.5s linear;
+    background-color:transparent;
+}
+
+/* Changing color and add a small animation to a icon when the cursor on it */
+
+
+.link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 45px;
+    border-radius: 99em;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transform-origin: center left;
+    transition: width 0.2s ease-in;
+    text-decoration: none;
+    color: white;
+  }
+  .link:before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    display: block;
+    border-radius: 99em;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in;
+    transform-origin: center right;
+    background-color: #00B4D8;
+  }
+  .link:hover, .link:focus {
+    outline: 0;
+    width: 130px;
+  }
+  .link:hover:before,
+  .link:hover .link-title, .link:focus:before,
+  .link:focus .link-title {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .link-icon {
+    font-size: 24px;
+    display: flex;
+    flex-shrink: 0;
+    left: 18px;
+    position: absolute;
+    
+  }
+  
+  .link-title {
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in;
+    transform-origin: center right;
+    display: block;
+    text-align: center;
+    text-indent: 28px;
+    width: 100%;
+  }
+  
+
+.main-btn
+{
+    display: inline-block;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: 2px solid #000;
+    padding: 12px 25px;
+    transition: all .42s ease;
+}
+
+
+.tebackground
+{
+    width: 100%;
+    height: 100vh;
+    background: url('logimg/t3.png') no-repeat;
+    background-size:cover;
+    background-position:center;
+    filter: blur(10px);
+}
+
+.logcontainer{
+    font-family: "Jost", sans-serif  !important;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 75%;
+    height: 550px;
+    background-position:center;
+    background: url('logimg/t3.png') no-repeat;
+    background-size: cover;
+}
+
+.logcontainer .logcontent
+{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 58%;
+    height: 100%;
+    background: transparent;
+    padding: 80px;
+    color: #e4e4e4;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.logcontent h2
+{
+    font-family: 'Inter', sans-serif !important;
+    font-size: 40px;
+}
+
+.text-sci h2 
+{
+    font-family: 'Inter', sans-serif !important;
+    font-size: 40px ;
+    line-height: 1;
+}
+
+.text-sci h2 span
+{
+    font-family: 'Inter', sans-serif !important;
+    font-size: 30px;
+}
+
+.text-sci p
+{
+    font-family: 'Inter', sans-serif !important;
+    font-size: 16px;
+    margin: 20px 0 ;
+}
+.logcontainer .hlogreg-box
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 58%);
+    height: 100%;
+    overflow: hidden;
+}
+
+.hlogreg-box .form-box 
+{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #e4e4e4;
+}
+
+.hlogreg-box .form-box.login
+{
+    transform: translateX(0px);
+    transition: transform .6s ease;
+    transition-delay: .7s;
+}
+
+.hlogreg-box.active .form-box.login
+{
+    transform: translateX(490px);
+    transition-delay: 0s ;
+}
+
+.hlogreg-box .form-box.register
+{
+    transform: translateX(490px);
+    transition: transform .6s ease;
+    transition-delay: 0s;
+}
+
+.hlogreg-box.active .form-box.register
+{
+    transform: translateX(0);
+    transition-delay: .7s;
+}
+
+.form-box h2
+{
+    font-family: "Jost", sans-serif !important;
+    font-size: 32px;
+    text-align: center;
+}
+
+.form-box .input-box
+{
+    position: relative;
+    width: 340px;
+    height: 50px;
+    border-bottom: 2px solid #e4e4e4;
+    margin: 30px 0;    
+    
+}
+.input-box input
+{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #e4e4e4; 
+    font-weight: 500;
+    padding-right: 28px;
+}
+.input-box label
+{
+   /* position: absolute;*/
+   font-family: "Jost", sans-serif !important;
+   position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s ease;
+}
+.input-box input:focus~label,
+.input-box input:valid~label
+{
+    top: -5px;
+}
+.input-box .icon1
+{
+    position: absolute;
+    top: 13px;
+    right: 0;
+    font-size: 19px;
+}
+.form-box .remember-forgot
+{
+    font-size: 14.5px;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.remember-forgot label input
+{
+    accent-color: #e4e4e4;
+    margin-right: 3px;
+
+}
+.remember-forgot a
+{
+    color: #e4e4e4;
+}
+.remember-forgot a:hover
+{
+    text-decoration: underline;
+}
+.rbtn
+{
+    width: 100%;
+    height: 45px;
+    background: #00B4D8;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #e4e4e4;
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+.form-box .error
+{
+    font-weight: 500;
+    color: #E5254B;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-box .login-register 
+{
+    font-size: 14.5px !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+    margin-top: 20px !important;
+}
+
+.login-register p a
+{
+    font-family: "Jost", sans-serif !important;
+    color: #e4e4e4 !important;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-register p a:hover
+{
+    text-decoration: underline;
+}
+
+
+/* Styles for autofilled input fields */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+    -webkit-text-fill-color: #e4e4e4  !important; /* Your custom text color */
+    font-weight: 500;
+    transition: background-color 5000s ease-in-out 0s;
+    background-color: transparent !important; /* Your custom background color */
+}
+
+@media screen and (max-width:1170px)
+{
+    .logcontainer .logreg-box
+    {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:1000px)
+{
+    .logcontainer .logreg-box
+    {
+        width: 55%;
+    }
+}
+
+@media screen and (max-width:800px)
+{
+    .logcontainer .logreg-box
+    {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:650px)
+{
+
+    .logcontainer .logreg-box
+    {
+        position: relative !important;
+        flex-direction: column;
+        width: 100%;
+        order: 1;
+    }
+    .logcontainer .content {
+        display: none; /* Hide the content */
+    }
+}
+
+@media screen and (max-width: 450px) {
+    /* Adjust the input boxes */
+    .form-box .input-box {
+        width: 100%; /* Make input boxes full width */
+        height: 40px; /* Reduce height */
+    }
+
+    /* Adjust the font size and padding for input fields */
+    .form-box input {
+        font-size: 14px; /* Reduce font size */
+        padding-right: 10px; /* Reduce padding */
+    }
+
+    /* Adjust the label size */
+    .input-box label {
+        font-size: 14px; /* Reduce label font size */
+    }
+
+    /* Adjust the icon size */
+    .input-box .icon {
+        font-size: 16px; /* Reduce icon size */
+    }
+
+    /* Adjust the button size */
+    .rbtn {
+        width: 100%; /* Make button full width */
+        height: 40px; /* Reduce height */
+        font-size: 14px; /* Reduce font size */
+    }
+
+    /* Adjust the text size in the login-register link */
+    .login-register p a {
+        font-size: 12px; /* Reduce link font size */
+    }
+
+    /* Adjust the form title */
+    .form-box h2 {
+        font-size: 28px; /* Reduce title font size */
+    }
+
+    .form-box .remember-forgot {
+        font-size: 12px; /* Reduce font size */
+        margin: -10px 0 10px; /* Adjust margins */
+        flex-direction: column; /* Stack the items vertically */
+        align-items: center; /* Center the items */
+        text-align: center; /* Center text */
+    }
+
+    .logcontainer .content {
+        display: none; /* Hide the content */
+    }
+}
+
+
+
+

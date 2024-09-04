@@ -1,0 +1,187 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #eaeaea;
+    text-align: center;
+}
+
+header .logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 28px;
+    color: #2b3e51;
+    margin: 0;
+}
+
+/* Help Section */
+.help-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.help-section h2 {
+    font-size: 36px;
+    color: #2b3e51;
+}
+
+.help-section p {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+/* Help Topics Grid */
+.help-topics {
+    display: flex; /* Use Flexbox */
+    justify-content: space-between; /* Space options evenly */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 20px; /* Add a gap between the items */
+    padding: 20px 0; /* Add padding to the top and bottom */
+}
+
+.help-topic-card {
+    background-color: #fff;
+    border-radius: 8px;
+    flex: 1 1 calc(25% - 20px); /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 25% minus gap */
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    min-width: 200px; /* Minimum width to prevent too small sizes */
+}
+
+.help-topic-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.help-topic-card .icon {
+    font-size: 48px;
+    color: #1e90ff;
+    margin-bottom: 20px;
+}
+
+.help-topic-card h3 {
+    font-size: 22px;
+    color: #2b3e51;
+    margin-bottom: 15px;
+}
+
+.help-topic-card .answer {
+    display: none;
+    font-size: 16px;
+    color: #777;
+    margin-top: 20px;
+    text-align: left;
+    border-top: 1px solid #eaeaea;
+    padding-top: 15px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablets (Landscape and Portrait) */
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+    
+    .help-topics {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .help-topic-card {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Mobile Devices (Portrait and Landscape) */
+@media (max-width: 768px) {
+    .help-section h2 {
+        font-size: 28px;
+    }
+
+    .help-section p {
+        font-size: 16px;
+    }
+
+    .help-topics {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .help-topic-card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .help-topic-card .icon {
+        font-size: 40px;
+    }
+
+    .help-topic-card h3 {
+        font-size: 20px;
+    }
+
+    .help-topic-card .answer {
+        font-size: 14px;
+    }
+}
+
+/* Smaller Mobile Devices (Portrait) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .help-section h2 {
+        font-size: 24px;
+    }
+
+    .help-section p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .help-topic-card {
+        padding: 15px;
+    }
+
+    .help-topic-card .icon {
+        font-size: 36px;
+    }
+
+    .help-topic-card h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .help-topic-card .answer {
+        font-size: 13px;
+        padding-top: 10px;
+    }
+}
